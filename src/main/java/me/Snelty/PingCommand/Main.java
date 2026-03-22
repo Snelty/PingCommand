@@ -6,6 +6,9 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        this.getCommand("ping").setExecutor(new PingCommand());
+        saveDefaultConfig();
+        if (getCommand("ping") != null) {
+            getCommand("ping").setExecutor(new PingCommand(this));
+        }
     }
 }

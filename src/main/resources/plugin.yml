@@ -1,0 +1,9 @@
+﻿name: PingCommand
+main: me.Snelty.PingCommand.Main
+version: ${project.version}
+author: ${author}
+api-version: 1.18
+commands:
+  ping:
+    description: Muestra tu ping
+    usage: /ping

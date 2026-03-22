@@ -1,24 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
-    <!-- Project information -->
+
     <groupId>me.Snelty</groupId>
     <artifactId>PingCommand</artifactId>
     <packaging>jar</packaging>
-
-    <!-- Plugin Information -->
     <name>PingCommand</name>
-    <description>This is just an example plugin</description>
+    <description>Ping command plugin</description>
     <version>0.1</version>
     <url>https://github.com/2lstudios-mc/bukkit-boilerplate</url>
 
     <properties>
         <author>Snelty</author>
-        <mainClass>me.Snelty.example.PingCommand</mainClass>
+        <mainClass>me.Snelty.PingCommand.Main</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-   <!-- External repositories -->
     <repositories>
         <repository>
             <id>spigot-repo</id>
@@ -26,7 +24,6 @@
         </repository>
     </repositories>
 
-    <!-- Dependencies imports -->
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -34,17 +31,32 @@
             <version>1.18.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>4.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-minimessage</artifactId>
+            <version>4.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-serializer-gson</artifactId>
+            <version>4.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-serializer-legacy</artifactId>
+            <version>4.17.0</version>
+        </dependency>
     </dependencies>
 
-    <!-- Build settings -->
     <build>
-        <!-- Name of your compiled artifact -->
-        <finalName>${artifactId}</finalName>
-        <!-- Directory of .java files -->
+        <finalName>${project.artifactId}</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
-        <!-- Clean old builds and install dependencies before compile -->
         <defaultGoal>clean install</defaultGoal>
-        <!-- Package files inside resource directory in to the jar -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -55,9 +67,7 @@
             </resource>
         </resources>
 
-        <!-- Compilation settings starts here -->
         <plugins>
-            <!-- Compile with java 8 -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -66,8 +76,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
-            <!-- Include dependencies inside jar -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
@@ -78,7 +86,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id> 
+                        <id>make-assembly</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>

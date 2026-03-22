@@ -1,3 +1,4 @@
 # PingCommand
-Hey! This plugin is in development.
-Next days I will release! 
+Hey!
+This is a simple plugin with /ping command
+with message configurable!
